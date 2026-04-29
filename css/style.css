@@ -220,6 +220,77 @@ body {
   background: var(--color-light);
 }
 
+/* ── Parallax-Sektion (regulative) ───────────────────────── */
+.section--parallax {
+  /* Kein overflow:hidden hier – der Card-Wrapper übernimmt das */
+  padding: 4rem 2rem; /* gleich wie andere Sektionen */
+}
+
+/* Card-Wrapper: begrenzt Breite identisch zu aktuelles-inner */
+.parallax-card {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 3.5rem 2.5rem;
+}
+
+/* Hintergrundbild – größer als Card, wird per JS bewegt */
+.parallax-bg {
+  position: absolute;
+  inset: -30% 0; /* oben+unten überstehen – Spielraum für Parallax */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+  z-index: 0;
+}
+
+/* Inhalt über dem Bild */
+.parallax-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Überschrift mit Schatten für Lesbarkeit */
+.parallax-titel {
+  font-size: 1.75rem;
+  color: var(--color-blue);
+  text-shadow: 0 1px 6px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--color-yellow);
+  display: inline-block;
+}
+
+/* Zwei Spalten nebeneinander */
+.parallax-cols {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.parallax-col {
+  flex: 1;
+}
+
+.parallax-col p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #fff;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.75), 0 0 14px rgba(0,0,0,0.5);
+  margin: 0 0 1rem 0;
+}
+
+.parallax-col p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Section-Stile (Rest) ────────────────────────────────── */
+
 .section-inner {
   max-width: 900px;
   margin: 0 auto;
@@ -261,6 +332,8 @@ body {
 .slider {
   position: relative;
   flex: 1 1 60%;
+  width: 100%;      /* verhindert Overflow auf Mobile */
+  min-width: 0;     /* verhindert dass Flex-Kind nicht schrumpft */
   border: 1px solid #ddd;
   border-radius: 6px;
   overflow: hidden;
@@ -268,6 +341,7 @@ body {
 
 .slider-track {
   display: flex;
+  align-items: flex-start; /* jede Folie nimmt ihre eigene Höhe */
   transition: transform 0.4s ease;
 }
 
@@ -595,7 +669,7 @@ body {
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 768px) {
-  /* Header: Logo links, Burger rechts – eine Zeile */
+  /* Header: nur Logo sichtbar – Burger ist position:fixed, nicht im Flex-Flow */
   .site-header {
     flex-direction: row;
     flex-wrap: wrap;
@@ -609,20 +683,39 @@ body {
     scroll-padding-top: 60px;
   }
 
-  /* Burger-Button einblenden */
+  /* Burger-Button: fest oben rechts, transparenter Hintergrund */
   .burger {
     display: flex;
+    position: fixed;
+    top: 0.75rem;
+    right: 1rem;
+    z-index: 200;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 6px;
+    padding: 0.45rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.12);
   }
 
-  /* Nav: standardmäßig versteckt, aufklappbar */
+  /* Nav: standardmäßig versteckt, klappt als Dropdown oben rechts auf */
   .site-nav {
     display: none;
     flex-direction: column;
-    width: 100%;
-    padding: 0.5rem 0 0.75rem;
+    position: fixed;
+    top: 3rem;
+    right: 0.5rem;
+    width: auto;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    z-index: 199;
+    padding: 0.5rem 0;
     gap: 0;
-    border-top: 1px solid #eee;
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
 
   .site-nav.offen {
@@ -631,10 +724,11 @@ body {
 
   .site-nav a {
     width: 100%;
-    padding: 0.7rem 1rem;
+    padding: 0.8rem 1.25rem;
     border-radius: 0;
-    font-size: 1rem;
     border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    white-space: nowrap;
   }
 
   .site-nav a:last-child {
@@ -672,5 +766,15 @@ body {
   .aktuelles-kontakt {
     flex: 1 1 100%;
     width: 100%;
+  }
+
+  /* Parallax: Spalten auf Mobile untereinander */
+  .parallax-cols {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .parallax-card {
+    padding: 2.5rem 1.5rem;
   }
 }

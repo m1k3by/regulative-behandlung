@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -27,8 +27,8 @@
     </button>
 
     <nav class="site-nav" id="hauptNav" aria-label="Hauptnavigation">
-      <a href="#regulative">regulative BeHANDlung ist …</a>
       <a href="#aktuelles">Aktuelles</a>
+      <a href="#regulative">regulative BeHANDlung ist …</a>
       <a href="#information">Information</a>
       <a href="#salz">Salz</a>
       <a href="#kontakt">Kontakt</a>
@@ -77,19 +77,7 @@
   <main>
 
     <!-- ═══════════════════════════════════════════════
-         SEKTION 1 – regulative BeHANDlung ist …
-    ════════════════════════════════════════════════ -->
-    <section id="regulative" class="section">
-      <div class="section-inner">
-        <h2>regulative BeHANDlung ist …</h2>
-        <div class="section-content">
-          <p class="placeholder">Inhalt folgt …</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         SEKTION 2 – Aktuelles (Slider + Kontaktformular)
+         SEKTION 1 – Aktuelles (Slider + Kontaktformular)
     ════════════════════════════════════════════════ -->
     <section id="aktuelles" class="section">
       <div class="section-inner aktuelles-inner">
@@ -255,6 +243,35 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════
+         SEKTION 2 – regulative BeHANDlung ist …
+    ════════════════════════════════════════════════ -->
+    <section id="regulative" class="section section--parallax" aria-label="regulative BeHANDlung ist …">
+      <!-- parallax-card: begrenzt Breite + overflow für Parallax-Effekt -->
+      <div class="parallax-card">
+        <!-- Parallax-Hintergrundbild – wird per JS verschoben -->
+        <div class="parallax-bg" aria-hidden="true"
+             style="background-image: url('img/sun_sea_hawaii.jpg');"></div>
+
+        <!-- Textinhalt über dem Bild -->
+        <div class="parallax-inner">
+          <h2 class="parallax-titel">regulative BeHANDlung ist …</h2>
+          <div class="parallax-cols">
+            <div class="parallax-col">
+              <p>ein gutes Werkzeug/eine feine Stimmgabel um wieder anzukommen … ,</p>
+              <p>in meiner ureigenen Schwingung, meinem Ton …&thinsp;.</p>
+              <p>Damit wir alle wieder, in diesem großen Orchester,</p>
+            </div>
+            <div class="parallax-col">
+              <p>zur rechten Zeit, am richtigen Platz,</p>
+              <p>mit gut gestimmtem Instrument, den eigenen Ton spielen.</p>
+              <p>Das IST Wohlklang.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
          SEKTION 3 – Information
     ════════════════════════════════════════════════ -->
     <section id="information" class="section">
@@ -334,6 +351,11 @@
       /* Slider auf die aktuelle Folie setzen */
       function slideAktualisieren() {
         track.style.transform = 'translateX(-' + (aktuellerSlide * 100) + '%)';
+        /* Höhe des Sliders an aktuelle Folie anpassen */
+        var aktiveSlide = track.querySelectorAll('.slide')[aktuellerSlide];
+        if (aktiveSlide) {
+          track.style.height = aktiveSlide.offsetHeight + 'px';
+        }
         dots.forEach(function (dot, i) {
           dot.classList.toggle('dot--active', i === aktuellerSlide);
           dot.setAttribute('aria-selected', i === aktuellerSlide ? 'true' : 'false');
@@ -358,6 +380,11 @@
           slideAktualisieren();
         });
       });
+
+      /* Initiale Höhe setzen (nach DOM-Render) */
+      window.addEventListener('load', slideAktualisieren);
+      /* Bei Größenveränderung (z.B. Rotation) neu anpassen */
+      window.addEventListener('resize', slideAktualisieren);
     })();
   </script>
 
@@ -400,6 +427,50 @@
           navLinks.forEach(function (link) { link.classList.remove('aktiv'); });
         }
       }, { passive: true });
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT – Parallax-Effekt (regulative-Sektion)
+  ════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var bg = document.querySelector('#regulative .parallax-bg');
+      if (!bg) return;
+
+      var ticking = false;
+
+      function parallaxAktualisieren() {
+        var sektion  = bg.parentElement;
+        var rect     = sektion.getBoundingClientRect();
+        var viewH    = window.innerHeight;
+
+        /* Nur berechnen wenn Sektion im sichtbaren Bereich */
+        if (rect.bottom < 0 || rect.top > viewH) {
+          ticking = false;
+          return;
+        }
+
+        /* Fortschritt: 0 = Sektion betritt oben, 1 = Sektion verlässt unten */
+        var fortschritt = (viewH - rect.top) / (viewH + rect.height);
+        /* Verschiebung: ±20% des Bild-Überstands (inset: -25%) */
+        var verschiebung = (fortschritt - 0.5) * 40; /* % der Sektionshöhe */
+        bg.style.transform = 'translateY(' + verschiebung + '%)';
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(parallaxAktualisieren);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      /* Auch beim Resize neu berechnen */
+      window.addEventListener('resize', parallaxAktualisieren, { passive: true });
+
+      /* Initialer Aufruf */
+      parallaxAktualisieren();
     })();
   </script>
 
