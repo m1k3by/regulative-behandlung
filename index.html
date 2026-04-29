@@ -630,8 +630,30 @@
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════════
-       JAVASCRIPT – Burger-Menü
+  <!-- ═══════════════════════════════════════════════       JAVASCRIPT – Hero-Overlay Tap (Touch-Geräte)
+  ═══════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var wrapper = document.querySelector('.foto-wrapper');
+      if (!wrapper) return;
+
+      /* Nur auf echten Touch-Geräten aktivieren */
+      if (!window.matchMedia('(hover: none)').matches) return;
+
+      wrapper.addEventListener('click', function () {
+        wrapper.classList.toggle('overlay-aktiv');
+      });
+
+      /* Klick außerhalb schließt den Overlay */
+      document.addEventListener('click', function (e) {
+        if (!wrapper.contains(e.target)) {
+          wrapper.classList.remove('overlay-aktiv');
+        }
+      });
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════       JAVASCRIPT – Burger-Menü
   ════════════════════════════════════════════════ -->
   <script>
     (function () {

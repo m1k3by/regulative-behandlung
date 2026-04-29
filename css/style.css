@@ -142,8 +142,32 @@ body {
 }
 
 /* Hover-Trigger: foto-wrapper statt hero-photo */
-.foto-wrapper:hover .hero-overlay {
+.foto-wrapper:hover .hero-overlay,
+.foto-wrapper.overlay-aktiv .hero-overlay {
   opacity: 1;
+}
+
+/* Tipp-Hinweis auf Touch-Geräten (unten am Foto) */
+@media (hover: none) {
+  .foto-wrapper::after {
+    content: 'Tippen …';
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .foto-wrapper.overlay-aktiv::after {
+    opacity: 0;
+  }
 }
 
 /* Hover overlay – überdeckt exakt den foto-wrapper */
@@ -223,7 +247,8 @@ body {
 /* ── Parallax-Sektion (regulative) ───────────────────────── */
 .section--parallax {
   /* Kein overflow:hidden hier – der Card-Wrapper übernimmt das */
-  padding: 4rem 2rem; /* gleich wie andere Sektionen */
+  padding: 4rem 2rem;
+  background: transparent; /* kein grauer nth-child-Hintergrund */
 }
 
 /* Card-Wrapper: begrenzt Breite identisch zu aktuelles-inner */
@@ -295,8 +320,8 @@ body {
 .section.section--zitat {
   background: transparent;
   text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 /* Capra-Zitat: nur Modifier – Bild ebenfalls auf .zitat-inner */
