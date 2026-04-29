@@ -1,0 +1,120 @@
+---
+pageTitle: "Datenschutzerklärung – Regulative BeHANDlung"
+pageDescription: "Datenschutzerklärung – Regulative BeHANDlung, Martina Stöcker"
+isLegal: true
+permalink: datenschutz.html
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ pageDescription }}" />
+  <title>{{ pageTitle }}</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="legal-body">
+
+  {% include "header.njk" %}
+
+  <!-- ═══════════════════════════════════════════════
+       DATENSCHUTZERKLÄRUNG
+  ════════════════════════════════════════════════ -->
+  <main class="legal-main">
+    <div class="legal-page">
+
+      <a class="legal-back" href="index.html">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Zurück zur Startseite
+      </a>
+
+      <h1>Datenschutzerklärung</h1>
+
+      <h2>Datenschutz</h2>
+      <p>
+        Wir, die Betreiber dieser Website, schützen Ihre persönlichen Daten gewissenhaft und befolgen dabei
+        alle Bestimmungen der Datenschutzgesetze. Personenbezogene Daten werden auf dieser Webseite nur
+        soweit erhoben, wie es technisch für statistische Zwecke notwendig ist. Wir werden die temporär
+        gespeicherten Daten weder verkaufen noch aus anderen Gründen an Dritte weitergegeben.
+      </p>
+      <p>
+        Sie können sich hier darüber informieren, welche Daten erhoben werden, was wir mit diesen Daten
+        machen und wie wir Ihren Schutz sicherstellen.
+      </p>
+
+      <h2>Wie gehen wir mit Ihren Daten um?</h2>
+      <p>
+        Ihr Browser übermittelt von sich aus automatisch die folgenden aufgelisteten Daten, die wir ebenso
+        automatisiert temporär in einer Datenbank auf unserem Server abspeichern:
+      </p>
+      <p>
+        Browsertyp und Version, das von Ihnen verwendete Betriebssystem, referrer URL (die von Ihnen
+        zuletzt besuchte Seite), Hostname des zugreifenden Rechners (IP Adresse), Uhrzeit des Aufrufs
+        unserer Seite, je nach Einstellung auch der Tag.
+      </p>
+      <p>
+        Wir können diese Daten nicht einzelnen Personen zuordnen, sie bleiben für uns anonym. Wir führen
+        diese Daten auch nicht mit Daten aus anderen Quellen zusammen, sie dienen ausschließlich
+        statistischen Zwecken, um die Besuchshäufigkeit und das Navigieren in dieser Website analysieren
+        zu können, die Daten werden nach jeder statistischen Auswertung gelöscht.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>Diese Homepage verwendet keine Cookies.</p>
+
+      <h2>Wie organisieren wir Newsletter und Kontakt</h2>
+      <p>
+        Im Fachbereich, soweit dieser auf unserer Website eingerichtet wird, werden weitere Daten abgefragt,
+        vor allem Ihr beruflicher Status und zur Verifizierung einer angegebenen Adresse auch eine gültige
+        E-Mail-Adresse. Hierzu sind wir nach den Bestimmungen des HWG (Heilmittelwerbegesetz) verpflichtet,
+        weil bestimmte Informationen nur dem Fachpublikum zugänglich gemacht werden dürfen.
+      </p>
+      <p>
+        Ihre Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie deren Nutzung zum Versand des
+        Newsletters, sofern wir diesen anbieten, können Sie jederzeit widerrufen.
+      </p>
+
+      <h2>Wie können Sie sich weiter informieren?</h2>
+      <p>
+        Sie können jederzeit alle über sie aktuell gespeicherte Daten abfragen. Historische Daten werden
+        periodisch gelöscht. Dabei können Sie die Herkunft der Daten erfahren, ob von uns abgefragt, oder
+        von Ihnen geliefert, und erhalten ebenso Auskunft über den Zweck der Speicherung. Dieses Recht auf
+        Auskunft ist uneingeschränkt, Sie können es durch eine Mail an die Betreiber (siehe Kontakt)
+        jederzeit wahrnehmen.
+      </p>
+      <p>
+        Wenn Sie weitere Fragen in Bezug auf die Speicherung und Verwendung Ihrer personenbezogenen Daten
+        haben, oder Fragen auftreten, die über den Umfang dieser Datenschutzerklärung hinausgehen, wenden
+        Sie sich bitte vertrauensvoll an uns. Wir stehen Ihnen jederzeit zur Auskunft und Erläuterung zur
+        Verfügung.
+      </p>
+
+    </div>
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script>
+    (function () {
+      var burger = document.querySelector('.burger');
+      var nav    = document.getElementById('hauptNav');
+      burger.addEventListener('click', function () {
+        var istOffen = nav.classList.toggle('offen');
+        burger.setAttribute('aria-expanded', istOffen ? 'true' : 'false');
+        burger.setAttribute('aria-label', istOffen ? 'Menü schließen' : 'Menü öffnen');
+      });
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('offen');
+          burger.setAttribute('aria-expanded', 'false');
+          burger.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

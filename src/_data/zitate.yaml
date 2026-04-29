@@ -1,0 +1,15 @@
+zitate:
+  - hintergrund: "/img/d3-scaled.jpg"
+    text: |
+      Ich kann sein, wie andere mich wollen,
+      ich kann sein, wie ich mich will
+      oder ich bin der/die ich bin.
+    autor: "Dr. Arthur Lincoln Pauls, Begründer der Ortho-Bionomy"
+    stil: "ortho"
+
+  - hintergrund: "/img/d1-scaled.jpg"
+    text: |
+      Ändere Dein Bewusstsein
+      und du wirst die Welt verändern
+    autor: "Fritjof Capra"
+    stil: "capra"
