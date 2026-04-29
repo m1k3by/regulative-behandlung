@@ -1,0 +1,601 @@
+/* ============================================================
+   Regulative BeHANDlung – Stylesheet
+   ============================================================ */
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: #fff;
+  /* Reserve space so sticky header never covers anchors */
+  scroll-padding-top: 72px;
+}
+
+/* ── Variables ────────────────────────────────────────────── */
+:root {
+  --color-yellow:  #F9C922;
+  --color-blue:    #1E4D9B;
+  --color-white:   #FFFFFF;
+  --color-light:   #F5F5F5;
+  --header-height: 72px;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+
+/* Logo area */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-logo img {
+  height: 44px;
+  width: auto;
+}
+
+.site-logo-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Navigation */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--color-blue);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a.aktiv {
+  background: var(--color-yellow);
+  color: #000;
+  outline: none;
+}
+
+/* ── Hero Section ─────────────────────────────────────────── */
+.hero {
+  display: flex;
+  /* Keine feste Höhe – der Hero skaliert über das Seitenverhältnis des Fotos */
+}
+
+/* Linke Hälfte – Martina-Foto */
+.hero-photo {
+  position: relative;
+  width: 50%;
+  flex-shrink: 0;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 3rem;
+}
+
+.hero-photo img {
+  width: 75%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+/* Wrapper direkt um das Foto – Overlay passt sich exakt ein */
+.foto-wrapper {
+  position: relative;
+  width: 75%;
+  max-width: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+.foto-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0; /* Radius sitzt am wrapper */
+  box-shadow: none;
+}
+
+/* Hover-Trigger: foto-wrapper statt hero-photo */
+.foto-wrapper:hover .hero-overlay {
+  opacity: 1;
+}
+
+/* Hover overlay – überdeckt exakt den foto-wrapper */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  text-align: center;
+  border-radius: 0; /* Radius erbt vom wrapper über overflow:hidden */
+}
+
+.hero-overlay .overlay-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.hero-overlay .overlay-body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #111;
+  max-width: 380px;
+}
+
+.hero-overlay .overlay-close {
+  display: block;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  font-style: italic;
+}
+
+/* Rechte Hälfte – Logo */
+.hero-right {
+  width: 50%;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Logo im Hero – füllt die rechte Hälfte passend aus */
+.hero-logo {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ── Common Section Styles ────────────────────────────────── */
+.section {
+  min-height: 300px;
+  padding: 4rem 2rem;
+  scroll-margin-top: var(--header-height);
+}
+
+.section:nth-child(odd) {
+  background: var(--color-white);
+}
+
+.section:nth-child(even) {
+  background: var(--color-light);
+}
+
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  color: var(--color-blue);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--color-yellow);
+  display: inline-block;
+}
+
+.section p.placeholder {
+  color: #bbb;
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+/* ── Aktuelles: Zweispaltig (Slider + Kontaktformular) ────── */
+.aktuelles-inner {
+  max-width: 1100px;
+}
+
+.aktuelles-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+/* Slider-Container */
+.slider {
+  position: relative;
+  flex: 1 1 60%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* Einzelne Folie */
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide-content {
+  padding: 1.5rem;
+}
+
+.slide-category {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: var(--color-blue);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.slide-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.slide-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.slide-meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.slide-img {
+  width: 70%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  margin: 1rem auto;
+}
+
+/* Info-Box oben in der Folie (beige Hintergrund) */
+.slide-infobox {
+  background: #f5f0e8;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.slide-infobox .slide-category {
+  margin-bottom: 0.25rem;
+}
+
+.slide-infobox .slide-title {
+  margin-bottom: 0.25rem;
+}
+
+.slide-infobox .slide-subtitle,
+.slide-infobox .slide-meta,
+.slide-infobox .slide-address {
+  font-size: 0.88rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+/* Blockquote mit grünem linken Balken, zentriert in der Folie */
+.slide-blockquote {
+  border-left: 4px solid #7cb842;
+  padding: 0.75rem 1.25rem;
+  margin: 1rem auto;
+  width: 72%;
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Kosten-Zeile */
+.slide-kosten {
+  font-size: 0.88rem;
+  text-align: center;
+  color: #555;
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Pfeil-Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid var(--color-yellow);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: var(--color-yellow);
+}
+
+.slider-btn--prev { left: 0.5rem; }
+.slider-btn--next { right: 0.5rem; }
+
+/* Punkt-Navigation */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--color-blue);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+
+.dot--active {
+  background: var(--color-blue);
+}
+
+/* Kontaktformular rechts */
+.aktuelles-kontakt {
+  flex: 0 0 280px;
+}
+
+.aktuelles-kontakt-titel {
+  font-size: 1.4rem;
+  color: var(--color-blue);
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--color-yellow);
+}
+
+.kontakt-form .form-group {
+  margin-bottom: 0.9rem;
+}
+
+.kontakt-form label {
+  display: block;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.form-required {
+  color: #c00;
+}
+
+.kontakt-form input,
+.kontakt-form textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.kontakt-form input:focus,
+.kontakt-form textarea:focus {
+  outline: none;
+  border-color: var(--color-blue);
+}
+
+.kontakt-form textarea {
+  resize: vertical;
+}
+
+.form-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-blue);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-btn:hover {
+  background: #163e82;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.site-footer {
+  background: var(--color-blue);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.8rem;
+}
+
+/* Burger-Button – auf Desktop versteckt */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  margin-left: auto;
+}
+
+.burger-strich {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* X-Animation wenn Menü offen */
+.burger[aria-expanded="true"] .burger-strich:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger[aria-expanded="true"] .burger-strich:nth-child(2) {
+  opacity: 0;
+}
+.burger[aria-expanded="true"] .burger-strich:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Header: Logo links, Burger rechts – eine Zeile */
+  .site-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.75rem 1rem;
+    gap: 0;
+    align-items: center;
+  }
+
+  body {
+    scroll-padding-top: 60px;
+  }
+
+  /* Burger-Button einblenden */
+  .burger {
+    display: flex;
+  }
+
+  /* Nav: standardmäßig versteckt, aufklappbar */
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0 0.75rem;
+    gap: 0;
+    border-top: 1px solid #eee;
+    margin-top: 0.5rem;
+  }
+
+  .site-nav.offen {
+    display: flex;
+  }
+
+  .site-nav a {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .site-nav a:last-child {
+    border-bottom: none;
+  }
+
+  .section {
+    scroll-margin-top: 60px;
+  }
+
+  /* Hero untereinander */
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-photo,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-photo {
+    padding: 1.5rem;
+  }
+
+  /* Logo auf Smartphone ausblenden */
+  .hero-right {
+    display: none;
+  }
+
+  /* Aktuelles: untereinander auf Smartphone */
+  .aktuelles-layout {
+    flex-direction: column;
+  }
+
+  .aktuelles-kontakt {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}

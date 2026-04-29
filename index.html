@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Regulative BeHANDlung – Heilpraktikerin Martina Stöcker" />
+  <title>Regulative BeHANDlung</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       HEADER – sticky, mit Anker-Navigation
+  ════════════════════════════════════════════════ -->
+  <header class="site-header">
+
+    <a class="site-logo" href="#" aria-label="Regulative BeHANDlung – Startseite">
+      <img src="img/logo-mini.png" alt="Regulative BeHANDlung Logo" />
+      <span class="site-logo-text">Regulative BeHANDlung</span>
+    </a>
+
+    <!-- Burger-Button – nur auf Smartphone sichtbar -->
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptNav">
+      <span class="burger-strich"></span>
+      <span class="burger-strich"></span>
+      <span class="burger-strich"></span>
+    </button>
+
+    <nav class="site-nav" id="hauptNav" aria-label="Hauptnavigation">
+      <a href="#regulative">regulative BeHANDlung ist …</a>
+      <a href="#aktuelles">Aktuelles</a>
+      <a href="#information">Information</a>
+      <a href="#salz">Salz</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO – Martina-Foto mit Hover-Overlay
+  ════════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Über Martina Stöcker">
+
+    <div class="hero-photo">
+      <!-- foto-wrapper: Overlay sitzt exakt über dem Foto -->
+      <div class="foto-wrapper">
+        <img src="img/martina.jpg" alt="Martina Stöcker – Heilpraktikerin" data-cms-image="hero-foto" />
+
+        <!-- Gelber Overlay erscheint beim Hovern -->
+        <div class="hero-overlay" aria-hidden="true">
+          <p class="overlay-title">ICH BIN …</p>
+          <p class="overlay-body">
+            Jahrgang 1964, seit 1986 verheiratet, Mutter von zwei Söhnen,
+            Schwiegermutter und Oma&nbsp;😍, Zahnarzthelferin, Heilpraktikerin,
+            AKUPUNKT-MASSAGE Therapeutin, Ortho-Bionomy-Praktitioner,
+            THEKI BewusstseinsTrainer, selbständig, in eigener Praxis,
+            seit 1997
+          </p>
+          <span class="overlay-close">… die ICH BIN</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="section-content">
+        <img
+          src="img/logo_no_adress_new-e1585121979333.png"
+          alt="Martina Stöcker – Heilpraktikerin – Regulative BeHANDlung"
+          class="hero-logo"
+          data-cms-image="hero-logo"
+        />
+      </div>
+    </div>
+
+  </section>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         SEKTION 1 – regulative BeHANDlung ist …
+    ════════════════════════════════════════════════ -->
+    <section id="regulative" class="section">
+      <div class="section-inner">
+        <h2>regulative BeHANDlung ist …</h2>
+        <div class="section-content">
+          <p class="placeholder">Inhalt folgt …</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SEKTION 2 – Aktuelles (Slider + Kontaktformular)
+    ════════════════════════════════════════════════ -->
+    <section id="aktuelles" class="section">
+      <div class="section-inner aktuelles-inner">
+        <h2>Aktuelles</h2>
+
+        <div class="section-content aktuelles-layout">
+
+          <!-- ── Slider ──────────────────────────────── -->
+          <div class="slider" aria-label="Aktuelle Beiträge">
+            <div class="slider-track" id="sliderTrack">
+
+              <!-- Folie 1 -->
+              <article class="slide">
+                <div class="slide-content">
+
+                  <!-- Info-Box oben -->
+                  <div class="slide-infobox">
+                    <p class="slide-category">Seminar Angebot</p>
+                    <h3 class="slide-title">Numerologie &amp; Blüten</h3>
+                    <p class="slide-subtitle">das Konstitutionsmittel der Bach-Blüten</p>
+                    <p class="slide-meta">montags oder freitags (nach Vereinbarung) von 10 bis 16 Uhr</p>
+                    <p class="slide-address">Hauptstraße 3 &ndash; 92278 Illschwang</p>
+                  </div>
+
+                  <!-- Bild -->
+                  <img
+                    src="img/Blueten.png"
+                    alt="Bach-Blüten in Fläschchen"
+                    class="slide-img"
+                    data-cms-image="aktuelles-slide-1"
+                  />
+
+                  <!-- Text unter Bild -->
+                  <p style="text-align:center">Einen Tag eintauchen in die Welt der Bach-Blüten<br>und die Philosophie von Dr. Edward Bach</p>
+
+                  <!-- Blockquote -->
+                  <blockquote class="slide-blockquote">
+                    <p>Errechnet aus dem Geburtsdatum<br>
+                    zeigt es unsere <strong>LEBENSAUFGABE</strong>,<br>
+                    das <strong>SEELENZIEL</strong>,<br>
+                    die <strong>inneren HELFER</strong> und<br>
+                    die <strong>mitgebrachten WERKZEUGE</strong>.</p>
+                    <p>Die <strong>Grundenergie</strong>,<br>
+                    das <strong>Jahr der Selbsterkenntnis</strong><br>
+                    und <strong>Selbstermächtigung</strong>.</p>
+                  </blockquote>
+
+                  <p style="text-align:center">Jeder erhält sein eigenes Seelenlied und lernt,<br>dieses zu errechnen und zu deuten.</p>
+
+                  <p class="slide-kosten"><strong>Kosten:</strong> 150 &euro; inklusive persönlicher Berechnung,<br>
+                  ausführlichem Seminarskript und eigener Blütenmischung,<br>
+                  der Wechsel- und Wandelmischung (gerade sehr dienlich) und 40er-Notfalltropfen.</p>
+
+                </div>
+              </article>
+
+              <!-- Folie 2 -->
+              <article class="slide">
+                <div class="slide-content">
+                  <img
+                    src="img/bunt_blumen.png"
+                    alt="Bach-Blüten – Zitat Dr. Edward Bach"
+                    class="slide-img"
+                    data-cms-image="aktuelles-slide-2"
+                  />
+                  <p>Dein individuelles Konstitutionsmittel der Blüten des Dr. Edward Bach –
+                  für <strong>39 € inkl. Porto</strong></p>
+                </div>
+              </article>
+
+              <!-- Folie 3 -->
+              <article class="slide">
+                <div class="slide-content">
+                  <p class="slide-category">Seminar Angebot</p>
+                  <h3 class="slide-title">Die Bach-Blüten &amp; die Philosophie des Dr. Edward Bach</h3>
+                  <p class="slide-meta">montags oder freitags (nach Vereinbarung) von 10 bis 16 Uhr</p>
+                  <img
+                    src="img/hand_blueten.png"
+                    alt="Hand mit Blüten und Sonnenlicht"
+                    class="slide-img"
+                    data-cms-image="aktuelles-slide-3"
+                  />
+                  <p>Drei Tage eintauchen in die Welt der Bach-Blüten und ihre vielfältigen Anwendungsmöglichkeiten.<br>
+                  <strong>Kosten: 330 € für drei Tage</strong> (inklusive ausführlichem Skript)</p>
+                </div>
+              </article>
+
+            </div><!-- /slider-track -->
+
+            <!-- Pfeil-Buttons -->
+            <button class="slider-btn slider-btn--prev" aria-label="Vorherige Folie">&#8249;</button>
+            <button class="slider-btn slider-btn--next" aria-label="Nächste Folie">&#8250;</button>
+
+            <!-- Punkt-Navigation -->
+            <div class="slider-dots" role="tablist" aria-label="Folien-Navigation">
+              <button class="dot dot--active" data-index="0" aria-label="Folie 1" role="tab"></button>
+              <button class="dot" data-index="1" aria-label="Folie 2" role="tab"></button>
+              <button class="dot" data-index="2" aria-label="Folie 3" role="tab"></button>
+            </div>
+
+          </div><!-- /slider -->
+
+          <!-- ── Kontaktformular ──────────────────────── -->
+          <!-- E-Mail-Adresse: action="mailto:deine@email.de" eintragen -->
+          <aside class="aktuelles-kontakt">
+            <h3 class="aktuelles-kontakt-titel">Kontakt</h3>
+            <form class="kontakt-form" action="#" method="post" novalidate>
+              <div class="form-group">
+                <label for="ak-name">Name</label>
+                <input type="text" id="ak-name" name="name" placeholder="Name" autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="ak-email">E-Mail <span class="form-required" aria-label="Pflichtfeld">*</span></label>
+                <input type="email" id="ak-email" name="email" placeholder="E-Mail" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="ak-nachricht">Nachricht</label>
+                <textarea id="ak-nachricht" name="nachricht" placeholder="Nachricht" rows="5"></textarea>
+              </div>
+              <button type="submit" class="form-btn">Senden</button>
+            </form>
+          </aside>
+
+        </div><!-- /aktuelles-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SEKTION 3 – Information
+    ════════════════════════════════════════════════ -->
+    <section id="information" class="section">
+      <div class="section-inner">
+        <h2>Information</h2>
+        <div class="section-content">
+          <p class="placeholder">Inhalt folgt …</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SEKTION 4 – Salz
+    ════════════════════════════════════════════════ -->
+    <section id="salz" class="section">
+      <div class="section-inner">
+        <h2>Salz</h2>
+        <div class="section-content">
+          <p class="placeholder">Inhalt folgt …</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SEKTION 5 – Kontakt
+    ════════════════════════════════════════════════ -->
+    <section id="kontakt" class="section">
+      <div class="section-inner">
+        <h2>Kontakt</h2>
+        <div class="section-content">
+          <p class="placeholder">Inhalt folgt …</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Regulative BeHANDlung &middot; Martina Stöcker</p>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT – Burger-Menü
+  ════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var burger = document.querySelector('.burger');
+      var nav    = document.getElementById('hauptNav');
+
+      /* Menü öffnen / schließen */
+      burger.addEventListener('click', function () {
+        var istOffen = nav.classList.toggle('offen');
+        burger.setAttribute('aria-expanded', istOffen ? 'true' : 'false');
+        burger.setAttribute('aria-label', istOffen ? 'Menü schließen' : 'Menü öffnen');
+      });
+
+      /* Menü schließen wenn ein Link geklickt wird */
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('offen');
+          burger.setAttribute('aria-expanded', 'false');
+          burger.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+  ════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var aktuellerSlide = 0;
+      var track = document.getElementById('sliderTrack');
+      var dots  = document.querySelectorAll('.dot');
+      var anzahl = document.querySelectorAll('.slide').length;
+
+      /* Slider auf die aktuelle Folie setzen */
+      function slideAktualisieren() {
+        track.style.transform = 'translateX(-' + (aktuellerSlide * 100) + '%)';
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('dot--active', i === aktuellerSlide);
+          dot.setAttribute('aria-selected', i === aktuellerSlide ? 'true' : 'false');
+        });
+      }
+
+      /* Pfeil-Buttons */
+      document.querySelector('.slider-btn--prev').addEventListener('click', function () {
+        aktuellerSlide = (aktuellerSlide - 1 + anzahl) % anzahl;
+        slideAktualisieren();
+      });
+
+      document.querySelector('.slider-btn--next').addEventListener('click', function () {
+        aktuellerSlide = (aktuellerSlide + 1) % anzahl;
+        slideAktualisieren();
+      });
+
+      /* Punkt-Navigation */
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          aktuellerSlide = i;
+          slideAktualisieren();
+        });
+      });
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT – Aktiver Nav-Link beim Scrollen
+  ════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var navLinks  = document.querySelectorAll('.site-nav a[href^="#"]');
+      var sektionen = document.querySelectorAll('main .section[id]');
+
+      /* Aktiven Link setzen */
+      function navAktualisieren(aktiveId) {
+        navLinks.forEach(function (link) {
+          var istAktiv = link.getAttribute('href') === '#' + aktiveId;
+          link.classList.toggle('aktiv', istAktiv);
+        });
+      }
+
+      /* IntersectionObserver: welche Section ist gerade im Sichtfenster? */
+      var beobachter = new IntersectionObserver(function (eintraege) {
+        eintraege.forEach(function (eintrag) {
+          if (eintrag.isIntersecting) {
+            navAktualisieren(eintrag.target.id);
+          }
+        });
+      }, {
+        /* Obere Kante = Header-Höhe; untere Kante = 55% vom Viewport */
+        rootMargin: '-72px 0px -55% 0px',
+        threshold: 0
+      });
+
+      sektionen.forEach(function (sektion) {
+        beobachter.observe(sektion);
+      });
+
+      /* Ganz oben (Hero) → kein Link aktiv */
+      window.addEventListener('scroll', function () {
+        if (window.scrollY < 80) {
+          navLinks.forEach(function (link) { link.classList.remove('aktiv'); });
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
