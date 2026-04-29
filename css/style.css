@@ -289,6 +289,119 @@ body {
   margin-bottom: 0;
 }
 
+/* ── Zitat-Sektion (Ortho-Bionomy) ──────────────────────── */
+
+/* Section-Hintergrund transparent – Bild sitzt auf .zitat-inner (begrenzte Breite) */
+.section.section--zitat {
+  background: transparent;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Capra-Zitat: nur Modifier – Bild ebenfalls auf .zitat-inner */
+.section.section--capra {
+  background: transparent;
+}
+
+/* Breiten-Begrenzung + Bild + Rundung identisch zu .parallax-card */
+.zitat-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: url('../img/d3-scaled.jpg') center / cover no-repeat;
+}
+
+/* Capra: anderes Hintergrundbild auf .zitat-inner */
+.section--capra .zitat-inner {
+  background-image: url('../img/d1-scaled.jpg');
+}
+
+.zitat-block {
+  margin: 0;
+  padding: 0;
+}
+
+/* Zitat-Text: lesbar auf dem Bild */
+.zitat-text {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  line-height: 1.9;
+  color: var(--color-blue);
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.95),
+    0 0 20px rgba(255,255,255,0.8),
+    1px 1px 0 rgba(255,255,255,0.9);
+  margin: 0 0 2rem;
+}
+
+/* Capra-Zitat: Text in Schwarz */
+.section--capra .zitat-text {
+  color: #000;
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.85),
+    0 0 20px rgba(255,255,255,0.6);
+}
+
+/* Wrapper für Autorname + SVG-Oval */
+.zitat-autor-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0.55rem 1.8rem;
+}
+
+/* SVG genau über den Autortext legen */
+.zitat-oval {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Stift-Zeichenanimation – dasharray/offset und @keyframes werden per JS gesetzt,
+   da getTotalLength() die exakte Pfadlänge in Pixeln liefert. */
+.zitat-oval-pfad {
+  fill: none;
+  stroke: var(--color-yellow);
+  stroke-width: 3;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: 0; /* Startzustand – JS blendet ein */
+}
+
+/* Übername: weiß, blauer Rand – hebt sich vom Bild ab */
+.zitat-autor {
+  position: relative;
+  z-index: 1;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #ffffff;
+  -webkit-text-stroke: 1.5px var(--color-blue);
+  paint-order: stroke fill;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+  letter-spacing: 0.01em;
+}
+/* Trennlinie vor dem Capra-Autorname */
+.zitat-trennlinie {
+  border: none;
+  border-top: 2px solid #000;
+  margin: 1.5rem auto 1rem;
+  width: 60%;
+  opacity: 0.75;
+}
+
+/* Capra-Autor: kein Oval, kein border-stroke – schwarze Darstellung */
+.zitat-autor--capra {
+  display: block;
+  -webkit-text-stroke: 0;
+  color: #000;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.5);
+  font-size: 1.15rem;
+}
 /* ── Section-Stile (Rest) ────────────────────────────────── */
 
 .section-inner {
@@ -314,6 +427,150 @@ body {
   color: #bbb;
   font-style: italic;
   margin-top: 1.5rem;
+}
+
+/* ── Akkordeon (Information-Sektion) ────────────────────── */
+.akkordeon {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.akk-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.akk-item:last-child {
+  border-bottom: none;
+}
+
+/* Kopfzeile / Button */
+.akk-kopf {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-blue);
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.akk-kopf:hover {
+  background: rgba(249, 201, 34, 0.12);
+}
+
+.akk-kopf[aria-expanded="true"] {
+  color: var(--color-blue);
+  border-bottom: 2px solid var(--color-yellow);
+}
+
+/* Pfeil-Icon */
+.akk-pfeil {
+  flex-shrink: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke: var(--color-blue);
+  stroke-width: 2.5;
+  fill: none;
+  transition: transform 0.3s ease;
+}
+
+.akk-kopf[aria-expanded="true"] .akk-pfeil {
+  transform: rotate(180deg);
+}
+
+/* Inhalt: CSS-Transition über max-height */
+.akk-inhalt {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+
+.akk-inhalt:not([hidden]) {
+  max-height: 2000px; /* groß genug für jeden Inhalt */
+}
+
+/* hidden-Attribut hebt display nicht auf – wir steuern über max-height */
+.akk-inhalt[hidden] {
+  display: block !important;
+  max-height: 0;
+}
+
+.akk-inhalt-inner {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.akk-inhalt-inner p {
+  margin: 0 0 0.85rem;
+  line-height: 1.75;
+}
+
+.akk-inhalt-inner p:last-child {
+  margin-bottom: 0;
+}
+
+/* Kosten-Tabelle */
+.akk-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.95rem;
+}
+
+.akk-tabelle td {
+  padding: 0.35rem 0.5rem;
+  vertical-align: top;
+}
+
+.akk-tabelle td:last-child {
+  white-space: nowrap;
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-blue);
+  padding-left: 1.5rem;
+}
+
+.akk-tabelle tr:nth-child(odd) td {
+  background: rgba(30, 77, 155, 0.04);
+}
+
+/* Listen (Werkzeuge) */
+.akk-liste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.akk-liste li {
+  padding: 0.35rem 0 0.35rem 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.akk-liste li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+/* Zitat innerhalb weiterer Informationen */
+.akk-zitat {
+  border-left: 3px solid var(--color-yellow);
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  font-style: italic;
+  color: var(--color-blue);
+  line-height: 1.8;
 }
 
 /* ── Aktuelles: Zweispaltig (Slider + Kontaktformular) ────── */

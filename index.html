@@ -272,13 +272,194 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════
-         SEKTION 3 – Information
+         SEKTION 2b – Ortho-Bionomy Zitat
+    ════════════════════════════════════════════════ -->
+    <section class="section section--zitat" aria-label="Zitat Dr. Arthur Lincoln Pauls">
+      <div class="zitat-inner">
+        <blockquote class="zitat-block">
+          <p class="zitat-text">
+            Ich kann sein, wie andere mich wollen,<br>
+            ich kann sein, wie ich mich will<br>
+            oder ich bin der/die ich bin.
+          </p>
+          <footer class="zitat-autor-wrapper">
+            <!-- SVG-Oval: Stift-Umrandungs-Animation – Maße werden per JS gesetzt -->
+            <svg class="zitat-oval" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg">
+              <ellipse class="zitat-oval-pfad"/>
+            </svg>
+            <cite class="zitat-autor">Dr.&nbsp;Arthur Lincoln Pauls, Begründer der Ortho&#8209;Bionomy</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SEKTION 2c – Capra-Zitat
+    ════════════════════════════════════════════════ -->
+    <section class="section section--zitat section--capra" aria-label="Zitat Fritjof Capra">
+      <div class="zitat-inner">
+        <blockquote class="zitat-block">
+          <p class="zitat-text">
+            Ändere Dein Bewusstsein<br>
+            und du wirst die Welt verändern
+          </p>
+          <footer>
+            <hr class="zitat-trennlinie" aria-hidden="true">
+            <cite class="zitat-autor zitat-autor--capra">Fritjof Capra</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SEKTION 3 – Information (Akkordeon)
     ════════════════════════════════════════════════ -->
     <section id="information" class="section">
       <div class="section-inner">
         <h2>Information</h2>
         <div class="section-content">
-          <p class="placeholder">Inhalt folgt …</p>
+
+          <!-- Akkordeon: immer nur eine Sektion offen (aria-expanded) -->
+          <div class="akkordeon" role="list">
+
+            <!-- ── 1. Indikationen ── -->
+            <div class="akk-item" role="listitem">
+              <button class="akk-kopf" aria-expanded="true" aria-controls="akk-indikationen">
+                <span>Indikationen</span>
+                <svg class="akk-pfeil" aria-hidden="true" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="akk-inhalt" id="akk-indikationen">
+                <div class="akk-inhalt-inner">
+                  <p>Schwangerschaftsbegleitung, traumatische Geburtserlebnisse und Regulationsstörungen daraus bei Kindern und Erwachsenen, Schiefhals, Gedeihstörung, Verdauungsprobleme, Schreikind, verzögertes Krabbeln, motorische Störungen, Konzentrationsprobleme, Rückenschmerzen, Kopfschmerzen, Menstruationsprobleme, Gelenksschmerzen, Spannungszustände nach Unfällen/Operationen/sonst. „Eingriffen", Beckenschiefstand, Beinlängendifferenzen, Hüft-, Knie- und Fußprobleme, Wirbel- und Gelenksfehlstellungen, Kieferfehlstellungen, Zähneknirschen, craniomandibuläre Dysfunktion, Spannungskopfschmerzen, Halswirbelsäulen- und Schulter&thinsp;/&thinsp;Arm&thinsp;–&thinsp;thematik, Narbenstörfelder, Schock-folgen und Trauma-abspaltungen, …</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── 2. Kosten ── -->
+            <div class="akk-item" role="listitem">
+              <button class="akk-kopf" aria-expanded="false" aria-controls="akk-kosten">
+                <span>Kosten</span>
+                <svg class="akk-pfeil" aria-hidden="true" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="akk-inhalt" id="akk-kosten" hidden>
+                <div class="akk-inhalt-inner">
+                  <p><strong>Kosten für Selbstzahler:</strong></p>
+                  <table class="akk-tabelle">
+                    <tbody>
+                      <tr><td>regulative BeHANDlung, erste oder Einzel-Sitzung; 2 Std.</td><td>160,00&thinsp;€</td></tr>
+                      <tr><td>Folge&thinsp;–&thinsp;BeHANDlung; 1,5 Std.</td><td>130,00&thinsp;€</td></tr>
+                      <tr><td>Baby und Kinder&thinsp;–&thinsp;BeHANDlung; 1 Std.</td><td>90,00&thinsp;€</td></tr>
+                      <tr><td>Telefonische Beratung, à&thinsp;15 Min</td><td>30,00&thinsp;€</td></tr>
+                    </tbody>
+                  </table>
+                  <p><strong>Kosten für Privat/Beihilfe/Zusatz-Versicherte:</strong></p>
+                  <table class="akk-tabelle">
+                    <tbody>
+                      <tr><td>regulative BeHANDlung:</td><td>160,00&thinsp;–&thinsp;220,00&thinsp;€</td></tr>
+                    </tbody>
+                  </table>
+                  <p>Geht der Gesprächs- und BeHANDlungsbedarf über die normalen Zeiten hinaus, berechne ich diese Zeit anteilig. Die Ruhezeit wird dabei selbstverständlich nicht gerechnet.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── 3. BeHANDlungsablauf ── -->
+            <div class="akk-item" role="listitem">
+              <button class="akk-kopf" aria-expanded="false" aria-controls="akk-ablauf">
+                <span>BeHANDlungsablauf</span>
+                <svg class="akk-pfeil" aria-hidden="true" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="akk-inhalt" id="akk-ablauf" hidden>
+                <div class="akk-inhalt-inner">
+                  <p>› Gespräch<br>› Anamnese</p>
+                  <p>Numeroskopbestimmung – das Konstitutionsmittel der Bach-Blüten, meine (Auf-)Gaben – die Partitur meines Seelenliedes</p>
+                  <p>› regulative BeHANDlung …<br>… erfolgt in der Regel bequem gekleidet auf der Liege</p>
+                  <p><strong>regulative BeHANDlung hilft uns …</strong><br>
+                  … sanft und ohne Manipulation, in Geborgenheit, mit Respekt und Achtsamkeit,<br>
+                  zurück zu unserem Ursprung,<br>
+                  unserer ureigenen Schwingung,<br>
+                  unserem Ur-Ton …</p>
+                  <p>Jetzt … kann Heilung stattfinden…<br>
+                  Jeder Mensch weiß wie es „gedacht ist"<br>
+                  und kann dahin zurückfinden … .<br>
+                  Seinen ureigenen „Plan" wieder ent-decken …</p>
+                  <p>Ich gebe Hilfestellung zur Selbsthilfe.<br>
+                  Aktivierung der Selbst-heilungs-kräfte, des eigenen, inneren Arztes</p>
+                  <p>› <strong>Nachruhe – ist sehr WICHTIG!!</strong><br>
+                  Das ist die Heilungs (ganz-SEIN) – und Integrations (Einordnung&thinsp;/&thinsp;Verschmelzung) – Zeit</p>
+                  <p>› Besprechung eventueller „Hausaufgaben"</p>
+                  <p>Nach der Be HANDlung ist ein Salzbad (in reinem Atlantikmeersalz) ratsam (zur Entsäuerung, Entgiftung, Energie-und Mineralienzuführung, Harmonisierung)</p>
+                  <p>… und … Zeit für sich selbst.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── 4. Werkzeuge / Stimmgabeln ── -->
+            <div class="akk-item" role="listitem">
+              <button class="akk-kopf" aria-expanded="false" aria-controls="akk-werkzeuge">
+                <span>„Werkzeuge"&thinsp;/&thinsp;"Stimmgabeln"</span>
+                <svg class="akk-pfeil" aria-hidden="true" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="akk-inhalt" id="akk-werkzeuge" hidden>
+                <div class="akk-inhalt-inner">
+                  <ul class="akk-liste">
+                    <li>Ortho-Bionomy®</li>
+                    <li>AKUPUNKT-MASSAGE n. Penzel® und andere Meridian&thinsp;–&thinsp;Therapien</li>
+                    <li>Ohr&thinsp;–&thinsp;Reflexzonen&thinsp;–&thinsp;BeHANDlung</li>
+                    <li>Schock und Trauma&thinsp;–&thinsp;BeHANDlung (n. Peter Levine, u.a.)</li>
+                    <li>Narben-störfeld&thinsp;–&thinsp;BeHANDlung</li>
+                    <li>Myofasciales Tapen n. Markus Erhard</li>
+                    <li>Faszien&thinsp;–&thinsp;BeHANDlung (anatomy trains, n. Tom Myers, u.a.)</li>
+                    <li>THEKI®</li>
+                    <li>systemisches Wirken</li>
+                    <li>UR-Kraftlinien</li>
+                    <li>BACH&thinsp;–&thinsp;BlütenMittel</li>
+                    <li>Numeroskopbestimmung, die Partitur unseres Seelenliedes, unser Seelenplan</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── 5. weitere Informationen ── -->
+            <div class="akk-item" role="listitem">
+              <button class="akk-kopf" aria-expanded="false" aria-controls="akk-weitere">
+                <span>weitere Informationen</span>
+                <svg class="akk-pfeil" aria-hidden="true" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="akk-inhalt" id="akk-weitere" hidden>
+                <div class="akk-inhalt-inner">
+                  <p>Viele unserer Blockaden und Energieflußstörungen,<br>
+                  die Ursache für unsere verschiedenen Symptome sein können,<br>
+                  werden schon in frühester Kindheit angelegt/verursacht.<br>
+                  Die Symptomatik wiederholt sich wieder und wieder,<br>
+                  solange, bis wir „uns – wieder – erkennen" und -dadurch- in die Heilung gehen.</p>
+                  <p>Und … die Kindheit beginnt nicht mit der Geburt, schon mit der Zeugung,<br>
+                  … noch weiter zurück: die beiden Ur-Zellen unseres Mensch-SEINS<br>
+                  sind schon irdisch (erdgebunden), seit unsere Eltern im Bauch ihrer Mamas waren … .</p>
+                  <p>In körperlicher Ausdrucksform liegt sehr oft eine Blockade/Fixierung<br>
+                  des Atlas&thinsp;–&thinsp;Kopf&thinsp;–&thinsp;Gelenks (Schädelbasis&thinsp;/&thinsp;1. Halswirbel) oder<br>
+                  der Kreuz&thinsp;–&thinsp;Darmbein&thinsp;–&thinsp;Gelenke (untere Basis der Wirbelsäule/Becken) vor.<br>
+                  Diese Verschiebung wirkt sich auf jede Körperregion aus<br>
+                  und kann Beschwerden verursachen.</p>
+                  <p>Ich „arbeite" mit dem Menschen und nicht an ihm.<br>
+                  Es geht um das eigene, innere „wieder&thinsp;–&thinsp;erkennen":</p>
+                  <blockquote class="akk-zitat">
+                    Ich kann sein, wie andere mich wollen,<br>
+                    oder … ich kann sein, wie ich mich will,<br>
+                    oder … ich bin die&thinsp;/&thinsp;der ICH BIN&thinsp;.
+                  </blockquote>
+                  <p>„The Evolvement of the Original Concept" – „die ursprünglichen Anlagen zur Entfaltung bringen"<br>
+                  <em>Dr. Arthur Lincoln Pauls, Begründer der Ortho-Bionomy®</em></p>
+                  <p>Aus diesem Grund kann eigentlich (ursprünglich, in Wirklichkeit)<br>
+                  jedes Symptom/jede Energieflußstörung regulativ (ordnend) beHANDelt werden.<br>
+                  Alles ist in uns vorhanden und möglich … wir haben ES nur eben vergessen,<br>
+                  verdrängt oder abgespaltet. Mal sehen, wie weit wir wieder zu uns finden …</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /akkordeon -->
         </div>
       </div>
     </section>
@@ -471,6 +652,97 @@
 
       /* Initialer Aufruf */
       parallaxAktualisieren();
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT – Akkordeon (Information-Sektion)
+  ════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.akk-kopf');
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var offen = btn.getAttribute('aria-expanded') === 'true';
+
+          /* Alle schließen */
+          buttons.forEach(function (b) {
+            b.setAttribute('aria-expanded', 'false');
+            var inhalt = document.getElementById(b.getAttribute('aria-controls'));
+            if (inhalt) inhalt.hidden = true;
+          });
+
+          /* Angeklickten öffnen – außer er war schon offen */
+          if (!offen) {
+            btn.setAttribute('aria-expanded', 'true');
+            var ziel = document.getElementById(btn.getAttribute('aria-controls'));
+            if (ziel) ziel.hidden = false;
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT – Stift-Oval-Animation (Zitat-Sektion)
+  ════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var pfad = document.querySelector('.zitat-oval-pfad');
+      var svgEl = document.querySelector('.zitat-oval');
+      var wrap  = document.querySelector('.zitat-autor-wrapper');
+      if (!pfad || !svgEl || !wrap) return;
+
+      /* Erstellt/aktualisiert den @keyframes-Block mit den exakten Pfadlängen */
+      function aufbauen() {
+        var w = wrap.offsetWidth;
+        var h = wrap.offsetHeight;
+
+        /* SVG-Koordinatensystem = tatsächliche Pixelgröße (1:1-Mapping) */
+        svgEl.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+        svgEl.setAttribute('width',   w);
+        svgEl.setAttribute('height',  h);
+
+        /* Ellipse: 5px Abstand vom Rand für den Strich */
+        pfad.setAttribute('cx', w / 2);
+        pfad.setAttribute('cy', h / 2);
+        pfad.setAttribute('rx', w / 2 - 5);
+        pfad.setAttribute('ry', h / 2 - 5);
+
+        /* Exakte Pfadlänge – Browser berechnet selbst */
+        var len     = pfad.getTotalLength();
+        var overlap = len * 0.08;  /* 8% Überschneidung am Startpunkt */
+        var total   = len + overlap;
+
+        /* @keyframes dynamisch erstellen/aktualisieren */
+        var styleEl = document.getElementById('oval-anim-kf');
+        if (!styleEl) {
+          styleEl = document.createElement('style');
+          styleEl.id = 'oval-anim-kf';
+          document.head.appendChild(styleEl);
+        }
+        styleEl.textContent =
+          '@keyframes stift-oval-dyn {\n' +
+          '  0%   { stroke-dashoffset: ' +  total    + '; opacity: 1; }\n' +
+          '  5%   { stroke-dashoffset: ' +  total    + '; opacity: 1; }\n' +
+          '  60%  { stroke-dashoffset: ' + (-overlap) + '; opacity: 1; }\n' +
+          '  74%  { stroke-dashoffset: ' + (-overlap) + '; opacity: 1; }\n' +
+          '  90%  { stroke-dashoffset: ' + (-overlap) + '; opacity: 0; }\n' +
+          ' 100%  { stroke-dashoffset: ' +  total    + '; opacity: 0; }\n' +
+          '}';
+
+        /* Pfad-Eigenschaften setzen & Animation neu starten */
+        pfad.style.strokeDasharray  = total;
+        pfad.style.strokeDashoffset = total;
+        pfad.style.animation = 'none';
+        void pfad.getBoundingClientRect(); /* Reflow erzwingen */
+        pfad.style.animation = 'stift-oval-dyn 5s ease-out infinite';
+      }
+
+      /* Nach vollständigem Laden aufrufen (Fonts + Layout fertig) */
+      window.addEventListener('load', aufbauen);
+      window.addEventListener('resize', aufbauen, { passive: true });
     })();
   </script>
 
