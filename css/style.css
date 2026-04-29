@@ -1343,10 +1343,11 @@ body {
     width: 100%;
   }
 
-  /* Parallax: Spalten auf Mobile untereinander */
+  /* Parallax: Spalten auf Mobile untereinander, Text zentriert */
   .parallax-cols {
     flex-direction: column;
     gap: 1.5rem;
+    text-align: center;
   }
 
   .parallax-card {
