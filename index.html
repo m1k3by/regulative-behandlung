@@ -155,25 +155,55 @@
                     class="slide-img"
                     data-cms-image="aktuelles-slide-2"
                   />
-                  <p>Dein individuelles Konstitutionsmittel der Blüten des Dr. Edward Bach –
-                  für <strong>39 € inkl. Porto</strong></p>
+                  <p style="text-align:center">Dein individuelles Konstitutionsmittel<br>
+                  der Blüten des Dr. Edward Bach<br>
+                  schwingt dich ein in deine LebensAufGabe,<br>
+                  dein SeelenZiel und zeigt dir deine HelferBlüten,<br>
+                  deine GrundEnergie<br>
+                  und die Jahreszahl des Erwachens<br>
+                  in die eigene Kraft.</p>
+
+                  <p style="text-align:center">Gerne versende ich deine persönliche<br>
+                  Berechnung und Blütenmischung<br>
+                  für <strong>39 € incl. Porto</strong></p>
                 </div>
               </article>
 
               <!-- Folie 3 -->
               <article class="slide">
                 <div class="slide-content">
-                  <p class="slide-category">Seminar Angebot</p>
-                  <h3 class="slide-title">Die Bach-Blüten &amp; die Philosophie des Dr. Edward Bach</h3>
-                  <p class="slide-meta">montags oder freitags (nach Vereinbarung) von 10 bis 16 Uhr</p>
+
+                  <!-- Info-Box -->
+                  <div class="slide-infobox">
+                    <p class="slide-category">Seminar Angebot</p>
+                    <h3 class="slide-title">Die Bach-Blüten &amp;<br>die Philosophie des Dr. Edward Bach</h3>
+                    <p class="slide-meta">montags oder freitags (nach Vereinbarung) von 10 bis 16 Uhr</p>
+                    <p class="slide-address">Hauptstraße 3 &ndash; 92278 Illschwang</p>
+                  </div>
+
+                  <!-- Bild -->
                   <img
                     src="img/hand_blueten.png"
                     alt="Hand mit Blüten und Sonnenlicht"
                     class="slide-img"
                     data-cms-image="aktuelles-slide-3"
                   />
-                  <p>Drei Tage eintauchen in die Welt der Bach-Blüten und ihre vielfältigen Anwendungsmöglichkeiten.<br>
-                  <strong>Kosten: 330 € für drei Tage</strong> (inklusive ausführlichem Skript)</p>
+
+                  <!-- Zitat Dr. Bach -->
+                  <blockquote class="slide-zitat">
+                    <p>&bdquo;Nicht bekämpfen, sondern erkennen und überwinden,<br>
+                    denn die vollkommene Heilung entsteht nur in unserem Inneren.&ldquo;</p>
+                    <footer>Dr. Edward Bach</footer>
+                  </blockquote>
+
+                  <!-- Beschreibungstext -->
+                  <p style="text-align:center">Drei Tage eintauchen in die Welt der Bach-Blüten und die vielfältigen<br>
+                  Anwendungsmöglichkeiten entdecken. Ich biete das montags und freitags,<br>
+                  in kleiner Runde, bei mir zu Hause an oder einfach nach Bedarf.</p>
+
+                  <!-- Kosten -->
+                  <p class="slide-kosten"><strong>Kosten:</strong> 330 &euro; für drei Tage (inclusive ausführlichem Skript)</p>
+
                 </div>
               </article>
 
@@ -192,24 +222,31 @@
 
           </div><!-- /slider -->
 
-          <!-- ── Kontaktformular ──────────────────────── -->
-          <!-- E-Mail-Adresse: action="mailto:deine@email.de" eintragen -->
+          <!-- ── Kontaktformular (Formspree xojygyzj) ──── -->
           <aside class="aktuelles-kontakt">
             <h3 class="aktuelles-kontakt-titel">Kontakt</h3>
-            <form class="kontakt-form" action="#" method="post" novalidate>
+            <div class="form-erfolg" data-fs-success>
+              <p>&#10003;&ensp;E-Mail versendet!</p>
+              <p>Martina meldet sich bald bei Ihnen.</p>
+            </div>
+            <div class="form-fehler" data-fs-error></div>
+            <form id="kontakt-form" class="kontakt-form">
               <div class="form-group">
-                <label for="ak-name">Name</label>
-                <input type="text" id="ak-name" name="name" placeholder="Name" autocomplete="name" />
+                <label for="ak-name">Name <span class="form-required" aria-label="Pflichtfeld">*</span></label>
+                <input type="text" id="ak-name" name="name" placeholder="Name" autocomplete="name" required data-fs-field />
+                <span class="form-feld-fehler" data-fs-error="name"></span>
               </div>
               <div class="form-group">
                 <label for="ak-email">E-Mail <span class="form-required" aria-label="Pflichtfeld">*</span></label>
-                <input type="email" id="ak-email" name="email" placeholder="E-Mail" required autocomplete="email" />
+                <input type="email" id="ak-email" name="email" placeholder="E-Mail" required autocomplete="email" data-fs-field />
+                <span class="form-feld-fehler" data-fs-error="email"></span>
               </div>
               <div class="form-group">
-                <label for="ak-nachricht">Nachricht</label>
-                <textarea id="ak-nachricht" name="nachricht" placeholder="Nachricht" rows="5"></textarea>
+                <label for="ak-nachricht">Nachricht <span class="form-required" aria-label="Pflichtfeld">*</span></label>
+                <textarea id="ak-nachricht" name="nachricht" placeholder="Nachricht" rows="5" required data-fs-field></textarea>
+                <span class="form-feld-fehler" data-fs-error="nachricht"></span>
               </div>
-              <button type="submit" class="form-btn">Senden</button>
+              <button type="submit" class="form-btn" data-fs-submit-btn>Senden</button>
             </form>
           </aside>
 
@@ -365,6 +402,17 @@
       }, { passive: true });
     })();
   </script>
+
+  <!-- ═══════════════════════════════════════════════
+       Formspree AJAX-Bibliothek (CDN)
+  ════════════════════════════════════════════════ -->
+  <script>
+    window.formspree = window.formspree || function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+    formspree('initForm', { formElement: '#kontakt-form', formId: 'xojygyzj' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>

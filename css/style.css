@@ -223,6 +223,11 @@ body {
 .section-inner {
   max-width: 900px;
   margin: 0 auto;
+  text-align: center; /* zentriert das inline-block h2 im Container */
+}
+
+.section-inner .section-content {
+  text-align: left; /* Fließtext wieder linksbündig */
 }
 
 .section h2 {
@@ -340,11 +345,33 @@ body {
   border-left: 4px solid #7cb842;
   padding: 0.75rem 1.25rem;
   margin: 1rem auto;
-  width: 72%;
+  width: 90%;
+  max-width: 520px;
   color: #444;
   font-size: 0.9rem;
   line-height: 1.7;
+  text-align: center;
+}
+
+/* Zitat-Blockquote (kursiv, beiger Balken) */
+.slide-zitat {
+  border-left: 3px solid #d4c9a8;
+  padding: 0.6rem 1.25rem;
+  margin: 1rem auto;
+  width: 85%;
+  max-width: 480px;
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.7;
   text-align: left;
+}
+
+.slide-zitat footer {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #888;
+  font-size: 0.85rem;
 }
 
 /* Kosten-Zeile */
@@ -474,6 +501,54 @@ body {
 
 .form-btn:hover {
   background: #163e82;
+}
+
+.form-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Formspree: Erfolgsmeldung */
+.form-erfolg {
+  display: none;
+  background: #e8f5e9;
+  border-left: 4px solid #43a047;
+  border-radius: 6px;
+  padding: 1.25rem 1rem;
+  color: #1b5e20;
+  margin-bottom: 1rem;
+}
+
+.form-erfolg p {
+  margin: 0.2rem 0;
+  font-weight: 600;
+}
+
+/* Formspree: allgemeiner Fehler */
+.form-fehler {
+  display: none;
+  background: #fdecea;
+  border-left: 4px solid #e53935;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: #b71c1c;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+/* Formspree: Feld-Fehlermeldungen */
+.form-feld-fehler {
+  display: block;
+  font-size: 0.8rem;
+  color: #c00;
+  margin-top: 0.25rem;
+  min-height: 1em;
+}
+
+/* Eingabefeld-Fehler-Highlight */
+.kontakt-form input[aria-invalid="true"],
+.kontakt-form textarea[aria-invalid="true"] {
+  border-color: #e53935;
 }
 
 /* ── Footer ───────────────────────────────────────────────── */
