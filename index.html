@@ -48,7 +48,7 @@
 
         <!-- Gelber Overlay erscheint beim Hovern -->
         <div class="hero-overlay" aria-hidden="true">
-          <p class="overlay-title">ICH BIN …</p>
+          <p class="overlay-body">Ich bin …</p>
           <p class="overlay-body">
             Jahrgang 1964, seit 1986 verheiratet, Mutter von zwei Söhnen,
             Schwiegermutter und Oma&nbsp;😍, Zahnarzthelferin, Heilpraktikerin,
@@ -56,7 +56,7 @@
             THEKI BewusstseinsTrainer, selbständig, in eigener Praxis,
             seit 1997
           </p>
-          <span class="overlay-close">… die ICH BIN</span>
+          <span class="overlay-body">… die ICH BIN</span>
         </div>
       </div>
     </div>
@@ -238,6 +238,12 @@
                 <span class="form-feld-fehler" data-fs-error="nachricht"></span>
               </div>
               <button type="submit" class="form-btn" data-fs-submit-btn>Senden</button>
+              <p class="form-datenschutz-hinweis">
+                Die über dieses Formular eingegebenen Daten werden über den Dienst Formspree verarbeitet
+                und zur Bearbeitung Ihrer Anfrage an uns weitergeleitet. Bitte übermitteln Sie keine
+                besonders sensiblen Gesundheitsdaten oder Diagnosen. Weitere Informationen finden Sie in
+                unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+              </p>
             </form>
           </aside>
 
@@ -588,25 +594,14 @@
               </p>
             </address>
 
-            <!-- Google Maps: voll interaktiv (scrollen/zoomen), Link öffnet Google Maps -->
-            <div class="kontakt-karte-wrapper">
-              <div class="kontakt-karte">
-                <iframe
-                  title="Karte: Martina Stöcker, Hauptstraße 3, 92278 Illschwang"
-                  src="https://maps.google.com/maps?q=Hauptstra%C3%9Fe+3%2C+92278+Illschwang&output=embed&z=13"
-                  width="100%" height="100%"
-                  style="border:0;"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  allowfullscreen>
-                </iframe>
-              </div>
-              <a class="kontakt-maps-link"
+            <!-- Kein eingebettetes Google Maps – kein externer Aufruf beim Laden -->
+            <div class="kontakt-maps-wrapper">
+              <a class="kontakt-maps-btn"
                  href="https://maps.google.com/?q=Hauptstra%C3%9Fe+3,+92278+Illschwang"
-                 target="_blank" rel="noopener"
-                 aria-label="Adresse in Google Maps öffnen">
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Anfahrt mit Google Maps öffnen (öffnet externen Dienst)">
                 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                In Google Maps öffnen
+                Anfahrt mit Google Maps öffnen
               </a>
             </div>
 
